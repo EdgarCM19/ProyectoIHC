@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import Animated from "react-native-reanimated";
 
-import { Header, Expandable, Calendar } from "../components/singles";
+import { Header, Expandable, Calendar, SessionCard } from "../components/singles";
 import { MenuIcon, NotificationIcon } from "../components/icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -18,7 +18,7 @@ const CalendarScreen = ({ drawerAnimationStyle, navigation }) => {
                         </TouchableOpacity>
                     }
                     right={
-                        <TouchableOpacity onPress={() => navigation.openDrawer() } >
+                        <TouchableOpacity onPress={() => navigation.navigate('Test') } >
                             <NotificationIcon size='32' color= 'white'/>
                         </TouchableOpacity>
                     }
@@ -32,45 +32,36 @@ const CalendarScreen = ({ drawerAnimationStyle, navigation }) => {
                         </View>
                         {/* Esta semana */}
                         <Expandable title="Esta semana" color="white">
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
+                            <SessionCard 
+                                id={0}
+                                concepto={'Concepto'}
+                                date={{day: '08', month: '08', year: '2021'}}
+                                startHour={{hour: 13, minutes: 15}}
+                                endHour={{hour: 13, minutes: 30}}
+                                evaluador="Evaluador"
+                                navigation={navigation}
+                            />
                         </Expandable>
                         {/* Este mes */}
                         <Expandable title="Este mes" color="white">
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
+                            <SessionCard 
+                                id={0}
+                                concepto={'Concepto'}
+                                date={{day: '08', month: '08', year: '2021'}}
+                                startHour={{hour: 13, minutes: 15}}
+                                endHour={{hour: 13, minutes: 30}}
+                                evaluador="Evaluador"
+                                navigation={navigation}
+                            />
+                            <SessionCard 
+                                id={0}
+                                concepto={'Concepto'}
+                                date={{day: '08', month: '08', year: '2021'}}
+                                startHour={{hour: 13, minutes: 15}}
+                                endHour={{hour: 13, minutes: 30}}
+                                evaluador="Evaluador"
+                                navigation={navigation}
+                            />
                         </Expandable>
                     </ScrollView>
                 </View>

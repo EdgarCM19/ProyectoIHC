@@ -7,7 +7,8 @@ import NotificationIcon from './NotificationIcon'
 import ArrowIcon from './Arrow'
 import CalendarIcon from "./CalendarIcon";
 import ClockIcon from "./ClockIcon";
-import LogoBold from './LogoBold'
+import LogoBold from './LogoBold';
+import ScoreIcon from './ScoreIcon';
 
 const getIcon = (icon) => {
     switch(icon){
@@ -23,4 +24,4 @@ const getIcon = (icon) => {
     return HomeIcon;
 }
 
-export { getIcon, HomeIcon, CourseIcon, MeetIcon, LogoutIcon, MenuIcon, NotificationIcon, ArrowIcon, CalendarIcon, ClockIcon, LogoBold };
+export { getIcon, HomeIcon, CourseIcon, MeetIcon, LogoutIcon, MenuIcon, NotificationIcon, ArrowIcon, CalendarIcon, ClockIcon, LogoBold, ScoreIcon };

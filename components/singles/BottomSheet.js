@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { View, Text, StyleSheet, useWindowDimensions } from "react-native";
 import Animated, { useAnimatedGestureHandler, useSharedValue, useAnimatedStyle, withSpring } from "react-native-reanimated";
-import { PanGestureHandler, ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { PanGestureHandler } from "react-native-gesture-handler";
 
 
 const springConf = {
@@ -48,10 +48,10 @@ const BottomSheet = ({title, children}) => {
     return (
         <>
         <PanGestureHandler onGestureEvent={gestureHandler}>
-            <Animated.View style={[styles.view, style]}>
+            <Animated.View style={[styles.view, style, {width: dimentions.width}]}>
                 <View style={[styles.open, {width: dimentions.width / 2.5}]}/> 
                 <Text style={styles.title}>{title}</Text>
-                <View>
+                <View style={[styles.content, {width: dimentions.width}]}>
                     {children}
                 </View>
             </Animated.View>
@@ -86,6 +86,10 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         backgroundColor: '#636363',
         marginBottom: 8
+    },
+    content: {
+        position: 'relative',
+        paddingHorizontal: 24
     }
 });
 

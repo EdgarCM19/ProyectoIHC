@@ -17,7 +17,7 @@ const LoginScreen = ({ navigation }) => {
                     <View >
                         <TextInput style={loginStyles.formInput} placeholder='Correo' placeholderTextColor='#636363'/>
                         <TextInput style={loginStyles.formInput} placeholder='Contraseña' placeholderTextColor='#636363'/>
-                        <TouchableOpacity onPress={() => navigation.navigate('Test')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
                             <View style={loginStyles.loginButton}>
                                 <Text style={loginStyles.loginButtonText}>Ingresar</Text>
                             </View>

@@ -88,7 +88,7 @@ const CustomDrawer = (props) => {
                 sceneContainerStyle={
                     {backgroundColor: '#FFF27D'}
                 }
-                initialRouteName="Test"
+                initialRouteName="LoginScreen"
                 drawerContent = { props => { 
                     const scale_a = Animated.interpolateNode(props.progress, {
                         inputRange: [0, 1],

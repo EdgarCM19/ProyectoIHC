@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from "react-nati
 import Animated from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Expandable, Average, Header, SeeMore } from '../components/singles';
+import { Expandable, Average, Header, SeeMore, SessionCard } from '../components/singles';
 import { MenuIcon, NotificationIcon } from '../components/icons';
 
 const HomeScreen = ({ drawerAnimationStyle, navigation }) => {
@@ -33,30 +33,22 @@ const HomeScreen = ({ drawerAnimationStyle, navigation }) => {
                         <Average data={average_data}/>
                         <SeeMore title="Esta semana" navigation={navigation} route="CalendarScreen" />
                         <Expandable title="Proximas sesiones" color="white">
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
+                            <SessionCard 
+                                concepto="Proyecto Final IHC"
+                                date={{day: '30', month: '11', year: '2021'}}
+                                startHour={{hour: 11, minutes: '00'}}
+                                endHour={{hour: 13, minutes: '00'}}
+                                evaluador="Carmen Ceron Garnica"
+                                navigation={navigation}
+                            />
+                            <SessionCard 
+                                concepto="Entrega 4"
+                                date={{day: '31', month: '11', year: '2021'}}
+                                startHour={{hour: '07', minutes: '15'}}
+                                endHour={{hour: '07', minutes: '40'}}
+                                evaluador="Carmen Ceron Garnica"
+                                navigation={navigation}
+                            />
                         </Expandable>
                     </ScrollView>
                 </View>

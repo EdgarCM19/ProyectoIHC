@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const SeeMore = ({title, navigation, route}) => {
+const SeeMore = ({title, color, navigation, route}) => {
     return (
         <View style={seeMoreStyles.container}>
-            <Text style={seeMoreStyles.title}>{title}</Text>
+            <Text style={[seeMoreStyles.title, {color: color}]}>{title}</Text>
             <TouchableOpacity onPress={() => navigation.navigate(`${route}`)}>
                 <Text style={seeMoreStyles.link}>{`See more >`}</Text>
             </TouchableOpacity>

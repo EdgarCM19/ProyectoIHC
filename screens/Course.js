@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Animated from "react-native-reanimated";
-import { Header, Average, Expandable } from '../components/singles';
+import { Header, Average, Expandable, SessionCard, HistoryCard } from '../components/singles';
 import { ArrowIcon } from '../components/icons'
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -23,60 +23,25 @@ const CourseScreen = ({drawerAnimationStyle, route, navigation}) => {
                 <View style={courseStyles.content}>
                     <ScrollView contentContainerStyle{...{width: '100%'}} showsVerticalScrollIndicator={false}>
                         {/* Course info */}
-                        <Text style={courseStyles.courseInfo}>ID-Nombre</Text>
+                        <Text style={courseStyles.courseInfo}>ID - Nombre</Text>
                         {/* Average */}
                         <Average data={average_data}/>
                         <Expandable title="Sesiones" color="white">
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
+                            <SessionCard 
+                                concepto="Concepto"
+                                date={{day: 'dd', month: 'mm', year: 'yy'}}
+                                startHour={{hour: 'hh', minutes: 'mm'}}
+                                endHour={{hour: 'hh', minutes: 'mm'}}
+                                evaluador="Evaluador"
+                            />
                         </Expandable>
                         <Expandable title="Historial" color="white">
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
-                            <View style={{
-                                backgroundColor: 'red',
-                                height: 80,
-                                width: 100,
-                                marginVertical: 16
-                            }}/>
+                            <HistoryCard 
+                                concepto="Concepto"
+                                date={{day: 'dd', month: 'mm', year: 'yy'}}
+                                score='X.x'
+                                teacher="Evaluador"
+                            />
                         </Expandable>
                     </ScrollView>
                 </View>
@@ -110,7 +75,8 @@ const courseStyles = StyleSheet.create({
         fontFamily: 'Arvo_700Bold',
         fontSize: 36,
         color: '#FFF27D',
-        textAlign: 'center'
+        textAlign: 'center',
+        letterSpacing: 5
     }
 });
 
